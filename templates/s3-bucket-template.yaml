@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  BucketName:
+    Type: String
+    Description: Lab3 s3 bucket 
+  EnableVersioning:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['true', 'false']
+    Description: Enable versioning (true/false)
+
+Conditions:
+  IsVersioningEnabled: !Equals [!Ref EnableVersioning, 'true']
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: !If [IsVersioningEnabled, Enabled, Suspended]
