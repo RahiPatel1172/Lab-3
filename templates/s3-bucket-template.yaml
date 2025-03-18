@@ -5,7 +5,7 @@ Parameters:
     Description: Lab3 s3 bucket 
   EnableVersioning:
     Type: String
-    Default: 'false'
+    Default: 'true'
     AllowedValues: ['true', 'false']
     Description: Enable versioning (true/false)
 
