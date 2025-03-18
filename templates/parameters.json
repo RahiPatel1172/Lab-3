@@ -1,0 +1,6 @@
+{
+    "Parameters": {
+        "BucketName": "lab3-s3-bucket-2024",
+        "EnableVersioning": "false"
+    }
+} 
